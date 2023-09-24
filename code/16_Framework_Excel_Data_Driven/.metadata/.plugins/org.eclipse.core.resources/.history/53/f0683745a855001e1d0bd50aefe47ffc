@@ -1,0 +1,19 @@
+package DataDriven.excelDataProvider;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+public class DataProvide {
+	
+	@Test(dataProvider="driveTest")
+	public void testCaseData(String greeting, String message, int id) {
+		System.out.println(greeting+message+id);
+	}
+
+	@DataProvider(name="driveTest")
+	public Object[][] getData() {
+		Object[][] testCaseData = {{"Hello", "GoodMorning", 1},{"Bey", "Message", 789},{"Solo","Traveler", 671}};
+	
+		return testCaseData;
+	}
+}

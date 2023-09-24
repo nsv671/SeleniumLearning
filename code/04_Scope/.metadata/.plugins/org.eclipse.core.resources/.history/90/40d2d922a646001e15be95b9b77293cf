@@ -1,0 +1,24 @@
+package TestNGPackage;
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+
+public class TestNGDemo {
+	@AfterTest
+	public void lastExecution() {
+		System.out.println("I will excute last");
+	}
+	@Test
+	public void testNGDemoMethod() {
+		System.out.println("Run via TestNG Library");
+	}
+	
+	@Test
+	public void testNGDemoMethod2() {
+		System.out.println("Run via TestNG Library Method 2");
+	}
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("I am number 1 from the END for the test execution");
+	}
+}

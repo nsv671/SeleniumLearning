@@ -1,0 +1,67 @@
+package SeleniumFrameworkDesign.StepDefinition;
+
+import java.io.IOException;
+//import java.util.List;
+
+//import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import SeleniumFrameworkDesign.locator.CartPage;
+import SeleniumFrameworkDesign.locator.CheckOutPage;
+import SeleniumFrameworkDesign.locator.ConformationPage;
+import SeleniumFrameworkDesign.locator.LandingPage;
+import SeleniumFrameworkDesign.locator.ProductCatalogue;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDefinitionImplementation extends BaseTest{
+	public LandingPage landingPage;
+	public ProductCatalogue productCatalogue;
+	public CartPage cartPage;
+	public ConformationPage conformationPage;
+	@Given("i landed on the E-commerce page")
+	public void i_landed_on_the_eCommerce_page() throws IOException {
+		landingPage = lanchApplication();
+	}
+	
+	@Given("^Logged in with username (.+) and password (.+)$")
+	public void logged_in_with_username_password(String userName, String password) {
+		productCatalogue = landingPage.loginInto(userName, password);
+	}
+	
+	@When("^I want product (.+) to cart$")
+	public void i_want_product_to_cart(String productName) throws InterruptedException {
+//		List<WebElement> webElementListsOfProduct = productCatalogue.getProductList();
+
+		cartPage = productCatalogue.addProductToCart(productName);
+	}
+	@When("^checkout (.+) and submit the order$") //we can also use @And anotation
+	public void checkout_and_submit_order(String productName) {
+		boolean flag = cartPage.VerifyProductDisplay(productName);
+		Assert.assertTrue(flag);
+
+		CheckOutPage checkOutPage = cartPage.goTOheckout();
+		checkOutPage.selectCountry("India");
+		conformationPage= checkOutPage.submitOrder();
+	}
+	
+	@Then("{string} message is displayed on confirmation page")
+	public void message_displayed_confirmationPage(String message) {
+		String conformationMessage = conformationPage.getConformationMessage();
+		Assert.assertTrue(conformationMessage.equalsIgnoreCase(message));
+		driver.close();
+	}
+	
+	@Then("{string} error message is displayed on login page")
+	public void error_message_display_on_login_page(String errorMessage) {
+		String UIerrorMessage = landingPage.getErrorMessage();
+		Assert.assertEquals(errorMessage,UIerrorMessage);
+		driver.close();
+	}
+//	Given Logged in with username <name> and password <password>
+//    When I want product <productName> to cart
+//    And checkout <productName> and submit the order
+//    Then "THANKYOU FOR THE ORDER." message is displayed ion confirmation page
+}

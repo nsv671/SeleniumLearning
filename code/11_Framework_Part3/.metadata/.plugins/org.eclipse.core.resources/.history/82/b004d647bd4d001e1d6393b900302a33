@@ -1,0 +1,43 @@
+package SeleniumFrameworkDesign;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import SeleniumFrameworkDesign.locator.CartPage;
+import SeleniumFrameworkDesign.locator.CheckOutPage;
+import SeleniumFrameworkDesign.locator.ConformationPage;
+import SeleniumFrameworkDesign.locator.ProductCatalogue;
+
+public class ErrorValidation extends BaseTest {
+	String productName = "ADIDAS ORIGINAL@";
+
+	@Test
+	public void loginErrorTest() throws InterruptedException, IOException {
+		landingPage.loginInto("testreg671@test.com", "Zxcvbnrgefm@671");
+		String errorMessage = landingPage.getErrorMessage();
+		Assert.assertEquals(errorMessage, "Incorrect email or password.");
+	}
+	
+	@Test
+	public void orderErrorTest() throws InterruptedException {
+		ProductCatalogue productCatalogue = landingPage.loginInto("test671@test.com", "Zxcvbnm@671");
+		CartPage cartPage = productCatalogue.addProductToCart(productName);
+		boolean flag = cartPage.VerifyProductDisplay(productName);
+		Assert.assertFalse(flag);
+		
+		CheckOutPage checkOutPage = cartPage.goTOheckout();
+		checkOutPage.selectCountry("India");
+		ConformationPage conformationPage= checkOutPage.submitOrder();
+		String conformationMessage = conformationPage.getConformationMessage();
+		Assert.assertTrue(conformationMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		
+		driver.findElement(By.className("fa-sign-out")).click();
+	}
+
+}

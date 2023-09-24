@@ -1,0 +1,9 @@
+
+public class Base64ToBytesExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

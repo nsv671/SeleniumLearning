@@ -1,0 +1,5 @@
+package SeleniumFrameworkDesign.AbstractComponents;
+
+public class AbstractComponent {
+
+}

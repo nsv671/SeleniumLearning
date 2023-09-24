@@ -1,0 +1,22 @@
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FileUpload {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
+		
+		driver.get("https://www.ilovepdf.com/pdf_to_jpg");
+		driver.findElement(By.id("pickfiles")).click();
+		
+		Thread.sleep(3000);
+		
+		Runtime.getRuntime().exec(System.getProperty("user/dri")+"fileUploadScript\\FileUpload.exe");
+	}
+
+}

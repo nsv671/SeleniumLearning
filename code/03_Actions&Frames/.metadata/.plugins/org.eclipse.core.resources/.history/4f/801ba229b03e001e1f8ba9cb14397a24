@@ -1,0 +1,9 @@
+
+public class AssignmentWindowHandle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String URL = "https://the-internet.herokuapp.com/windows";
+	}
+
+}

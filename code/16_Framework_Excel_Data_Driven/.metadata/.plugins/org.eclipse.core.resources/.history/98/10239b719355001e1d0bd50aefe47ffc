@@ -1,0 +1,62 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DataDriven {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		FileInputStream file = new FileInputStream("C:\\Users\\nites\\Desktop\\SELENIUM\\code\\16_Framework_Excel_Data_Driven\\demoData.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(file);
+		
+		int numberOfSheet = workbook.getNumberOfSheets();
+		boolean flag = false;
+		
+		for(int i=0; i<numberOfSheet; i++) {
+			if(workbook.getSheetName(i).equalsIgnoreCase("TestData")) {
+				
+				XSSFSheet sheet = workbook.getSheetAt(i);
+				Iterator<Row> rows= sheet.iterator();
+				Row firstRow = rows.next();
+				Iterator<Cell> cells = firstRow.cellIterator();
+				
+				int column=0, initialValue=0;
+				while(cells.hasNext()) {
+					Cell cell = cells.next();
+					if(cell.getStringCellValue().equalsIgnoreCase("TestCase")) {
+						//desire cell
+						column = initialValue;
+						flag = true;
+						break;
+					}
+
+					initialValue++;
+				}
+				
+				while(rows.hasNext()) {
+					Row row =rows.next();
+					if(row.getCell(column).getStringCellValue().equalsIgnoreCase("Purchase")) {
+						Iterator<Cell> testDataCells = row.cellIterator();
+						while(testDataCells.hasNext()) {
+							Cell testData = testDataCells.next();
+							System.out.println(testData.getStringCellValue());
+						}
+					}
+				}
+				
+				System.out.println(column);
+//				if(flag) {
+//					System.out.println("loop exit");
+//					break;
+//				}
+			}
+		}
+		
+	}
+
+}

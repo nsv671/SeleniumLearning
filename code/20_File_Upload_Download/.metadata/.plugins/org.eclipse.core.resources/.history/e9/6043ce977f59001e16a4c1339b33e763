@@ -1,0 +1,11 @@
+
+public class WindowPopUp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe")
+		
+		
+	}
+
+}

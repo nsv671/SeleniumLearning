@@ -1,0 +1,5 @@
+package SeleniumFrameworkDesign.TestComponents;
+
+public class BaseTest {
+
+}

@@ -1,0 +1,31 @@
+package introduction;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebElement;
+
+public class DropdownPractices {
+	public static void main(String[] age) throws InterruptedException{
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		
+		WebElement selectDropdown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
+		
+		Select dropdown = new Select(selectDropdown);
+		Thread.sleep(1000);
+		dropdown.selectByIndex(2);
+		System.out.println(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).getText());
+		
+		Thread.sleep(1000);
+		dropdown.selectByValue("USD");
+		System.out.println(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).getText());
+		
+		Thread.sleep(1000);
+		dropdown.selectByVisibleText("AED");
+		System.out.println(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).getText());
+	}
+}

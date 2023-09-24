@@ -1,0 +1,14 @@
+package DataDriven.excelDataProvider;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+public class DataProvide {
+	
+	@Test
+
+	@DataProvider
+	public void getData() {
+		
+	}
+}

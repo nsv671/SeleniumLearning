@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-08T03:13:41 IST" name="Suite" finished-at="2023-09-08T03:13:53 IST" duration-ms="11646">
+    <groups>
+      <group name="Purchase">
+        <method signature="StandAloneTest.submitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" name="submitOrder" class="SeleniumFrameworkDesign.StandAloneTest"/>
+      </group> <!-- Purchase -->
+    </groups>
+    <test started-at="2023-09-08T03:13:41 IST" name="Login Error Test" finished-at="2023-09-08T03:13:53 IST" duration-ms="11610">
+      <class name="SeleniumFrameworkDesign.StandAloneTest">
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:41 IST" name="lanchApplication" finished-at="2023-09-08T03:13:44 IST" duration-ms="2438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="submitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:44 IST" name="submitOrder" data-provider="getData" finished-at="2023-09-08T03:13:47 IST" duration-ms="3760" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test671@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Zxcvbnm@671]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ADIDAS ORIGINAL]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:47 IST" name="tearDown" finished-at="2023-09-08T03:13:48 IST" duration-ms="120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:48 IST" name="lanchApplication" finished-at="2023-09-08T03:13:49 IST" duration-ms="1272" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="submitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:49 IST" name="submitOrder" data-provider="getData" finished-at="2023-09-08T03:13:53 IST" duration-ms="3872" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test672@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Zxcvbnm@672]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[IPHONE 13 PRO]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@292b08d6]" started-at="2023-09-08T03:13:53 IST" name="tearDown" finished-at="2023-09-08T03:13:53 IST" duration-ms="102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumFrameworkDesign.StandAloneTest -->
+    </test> <!-- Login Error Test -->
+    <test started-at="2023-09-08T03:13:53 IST" name="Error validation Test" finished-at="2023-09-08T03:13:53 IST" duration-ms="1">
+    </test> <!-- Error validation Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,58 @@
+import java.util.Optional;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v116.network.Network;
+import org.openqa.selenium.devtools.v116.network.model.ConnectionType;
+
+public class NetworkSpeed {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+
+		DevTools devTools = driver.getDevTools();
+		devTools.createSession();
+
+		devTools.createSession();
+		devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+//		emulateNetworkConditions(java.lang.Boolean offline, java.lang.Number latency, java.lang.Number downloadThroughput, java.lang.Number uploadThroughput, java.util.Optional<org.openqa.selenium.devtools.v116.network.model.ConnectionType> connectionType)
+		devTools.send(
+				Network.emulateNetworkConditions(false, 3000, 10000, 20000, Optional.of(ConnectionType.ETHERNET)));
+
+		devTools.addListener(Network.loadingFailed(), error -> {
+			System.out.println(error.getErrorText());
+			System.out.println(error.getTimestamp());
+		});
+
+		long startTime = System.currentTimeMillis();
+
+//		driver.get("https://rahulshettyacademy.com/angularAppdemo/");
+//		driver.findElement(By.linkText("Browse Products")).click();
+//		driver.findElement(By.linkText("Selenium")).click();
+//		driver.findElement(By.cssSelector(".add-to-cart")).click();
+//
+//		System.out.println(driver.findElement(By.cssSelector("p")).getText());
+
+		driver.get("https://google.com");
+
+		driver.findElement(By.name("q")).sendKeys("netflix", Keys.ENTER);
+
+		String heroTextTitle = driver.findElement(By.tagName("h1")).getText();
+
+		System.out.println(driver.getTitle());
+		System.out.println(heroTextTitle);
+
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime - startTime);
+
+		driver.close();
+
+		// 23447 444
+	}
+
+}

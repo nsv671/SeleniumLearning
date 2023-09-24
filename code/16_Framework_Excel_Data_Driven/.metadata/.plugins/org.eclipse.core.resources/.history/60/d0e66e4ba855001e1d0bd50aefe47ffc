@@ -1,0 +1,29 @@
+package DataDriven.excelDataProvider;
+
+import org.testng.annotations.Test;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+
+public class DataProvide {
+	
+	@Test(dataProvider="driveTest")
+	public void testCaseData(String greeting, String message, int id) {
+		System.out.println(greeting+message+id);
+	}
+
+	@DataProvider(name="driveTest")
+	public Object[][] getData() {
+		FileInputStream fis = new FileInputStream("C:\\Users\\nites\\Desktop\\SELENIUM\\code\\16_Framework_Excel_Data_Driven\\excelDataProvider\\excelDataProvider.xlsx");
+		
+		XSSFWorkbook worksheet = new XSSFWorkbook(fis);
+		
+		Object[][] testCaseData = {{"Hello", "GoodMorning", 1},{"Bey", "Message", 789},{"Solo","Traveler", 671}};
+	
+		return testCaseData;
+	}
+}
+
+//C:\Users\nites\Desktop\SELENIUM\code\16_Framework_Excel_Data_Driven\excelDataProvider\excelDataProvider.xlsx

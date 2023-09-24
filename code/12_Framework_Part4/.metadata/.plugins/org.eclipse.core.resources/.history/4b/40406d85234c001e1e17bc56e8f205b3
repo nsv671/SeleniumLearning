@@ -1,0 +1,76 @@
+package SeleniumFrameworkDesign.locator;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import SeleniumFrameworkDesign.AbstractComponents.AbstractComponent;
+
+public class ProductCatalogue extends AbstractComponent {
+	WebDriver driver;
+
+	public ProductCatalogue(WebDriver driver) {
+		// Initialization
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(className = "mb-3")
+	List<WebElement> products;
+
+	By productBy = By.className("mb-3");
+	By addToCart = By.cssSelector(".card-body button:last-of-type");
+	By toastMessage = By.cssSelector("#toast-container");
+	By spinner = By.cssSelector(".ng-animating");
+
+	public List<WebElement> getProductList() {
+		waitForElementToAppear(productBy);
+		return products;
+	}
+
+	public WebElement getProductByName(String productName) {
+		WebElement productNeedToSelect = getProductList().stream()
+				.filter(product -> product.findElement(By.tagName("b")).getText().equalsIgnoreCase(productName))
+				.findFirst().orElse(null);
+
+		return productNeedToSelect;
+	}
+
+	public void addProductToCart(String productName) throws InterruptedException {
+		WebElement prod = getProductByName(productName);
+		prod.findElement(addToCart).click();
+
+		waitForElementToAppear(toastMessage);
+		waitForElementToDisappear(spinner);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
+//		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+//		productCatalogue.waitForElementToAppear(By.cssSelector("#toast-container"));
+//		productCatalogue.waitForElementToAppear(By.cssSelector(".ng-animating"));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[routerlink*='cart']")));
+
+		driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
+	}
+
+	public void productInCartValidation(String productName) {
+		List<WebElement> cartList = driver.findElements(By.cssSelector(".cartSection h3"));
+		boolean flag = cartList.stream().anyMatch(item -> item.getText().equalsIgnoreCase(productName));
+
+		Assert.assertTrue(flag);
+
+		driver.findElement(By.cssSelector(".totalRow button")).click();
+	}
+
+	public void checkout() {
+		Actions actions = new Actions(driver);
+		actions.sendKeys(driver.findElement(By.cssSelector(".form-group input")), "India").build().perform();
+		driver.findElement(By.xpath("(//button[contains(@class, 'ta-item')])[2]")).click();
+		driver.findElement(By.className("action__submit"));
+	}
+}

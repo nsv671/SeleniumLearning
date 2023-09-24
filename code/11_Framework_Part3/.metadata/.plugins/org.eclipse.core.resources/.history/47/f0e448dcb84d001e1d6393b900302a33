@@ -1,0 +1,33 @@
+package SeleniumFrameworkDesign;
+
+import java.util.List;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import SeleniumFrameworkDesign.locator.CartPage;
+import SeleniumFrameworkDesign.locator.CheckOutPage;
+import SeleniumFrameworkDesign.locator.ConformationPage;
+import SeleniumFrameworkDesign.locator.LandingPage;
+import SeleniumFrameworkDesign.locator.ProductCatalogue;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ErrorValidation extends BaseTest {
+
+	@Test
+	public void submitOrder() throws InterruptedException, IOException {
+		LandingPage landingPage = lanchApplication();
+		
+		ProductCatalogue productCatalogue = landingPage.loginInto("testreg671@test.com", "Zxcvbnrgefm@671");
+		String errorMessage = landingPage.getErrorMessage();
+		Assert.assertEquals(errorMessage, "Incorrect email or password.");
+	}
+
+}

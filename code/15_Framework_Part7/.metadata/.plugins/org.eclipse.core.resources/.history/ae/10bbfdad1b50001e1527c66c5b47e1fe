@@ -1,0 +1,12 @@
+
+public class ExtentReporterNG {
+	public void getReporterObject() {
+		
+	//ExtentReports, ExtentSparkReporter
+	String path = System.getProperty("user.dir")+"\\reports\\index.html";
+	ExtentSparkReporter reporter = new ExtentReporter(path);
+	
+	reporter.config();
+	
+	}
+}

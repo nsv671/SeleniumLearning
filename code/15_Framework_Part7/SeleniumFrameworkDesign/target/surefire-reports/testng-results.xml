@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results retried="1" ignored="1" total="7" passed="4" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-13T23:03:30 IST" name="Suite" finished-at="2023-09-13T23:03:47 IST" duration-ms="17429">
+    <groups>
+      <group name="ErrorHandling">
+        <method signature="ErrorValidationTest.loginErrorTest()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" name="loginErrorTest" class="SeleniumFrameworkDesign.ErrorValidationTest"/>
+      </group> <!-- ErrorHandling -->
+      <group name="Purchase">
+        <method signature="StandAloneTest.submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" name="submitOrder" class="SeleniumFrameworkDesign.StandAloneTest"/>
+      </group> <!-- Purchase -->
+    </groups>
+    <test started-at="2023-09-13T23:03:30 IST" name="Error validation Test" finished-at="2023-09-13T23:03:44 IST" duration-ms="13907">
+      <class name="SeleniumFrameworkDesign.ErrorValidationTest">
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:30 IST" name="lanchApplication" finished-at="2023-09-13T23:03:33 IST" duration-ms="3084" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method retried="true" signature="loginErrorTest()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:33 IST" name="loginErrorTest" finished-at="2023-09-13T23:03:34 IST" duration-ms="687" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or @@@@password.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or @@@@password.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at SeleniumFrameworkDesign.ErrorValidationTest.loginErrorTest(ErrorValidationTest.java:18)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:34 IST" name="tearDown" finished-at="2023-09-13T23:03:34 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:34 IST" name="lanchApplication" finished-at="2023-09-13T23:03:37 IST" duration-ms="3111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="loginErrorTest()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:37 IST" name="loginErrorTest" finished-at="2023-09-13T23:03:37 IST" duration-ms="460" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or @@@@password.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or @@@@password.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at SeleniumFrameworkDesign.ErrorValidationTest.loginErrorTest(ErrorValidationTest.java:18)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:38 IST" name="tearDown" finished-at="2023-09-13T23:03:38 IST" duration-ms="84" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:38 IST" name="lanchApplication" finished-at="2023-09-13T23:03:41 IST" duration-ms="2530" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="orderErrorTest()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:41 IST" name="orderErrorTest" finished-at="2023-09-13T23:03:44 IST" duration-ms="2963" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderErrorTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.ErrorValidationTest@6a4f1a55]" started-at="2023-09-13T23:03:44 IST" name="tearDown" finished-at="2023-09-13T23:03:44 IST" duration-ms="66" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumFrameworkDesign.ErrorValidationTest -->
+    </test> <!-- Error validation Test -->
+    <test started-at="2023-09-13T23:03:30 IST" name="Login Error Test" finished-at="2023-09-13T23:03:47 IST" duration-ms="17429">
+      <class name="SeleniumFrameworkDesign.StandAloneTest">
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:30 IST" name="lanchApplication" finished-at="2023-09-13T23:03:33 IST" duration-ms="2896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:33 IST" name="submitOrder" data-provider="getData" finished-at="2023-09-13T23:03:37 IST" duration-ms="4167" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Zxcvbnm@671, email=test671@test.com, productName=ADIDAS ORIGINAL}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:37 IST" name="tearDown" finished-at="2023-09-13T23:03:37 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:37 IST" name="lanchApplication" finished-at="2023-09-13T23:03:40 IST" duration-ms="2630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:40 IST" name="submitOrder" data-provider="getData" finished-at="2023-09-13T23:03:44 IST" duration-ms="3869" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Zxcvbnm@672, email=test672@test.com, productName=IPHONE 13 PRO}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:44 IST" name="tearDown" finished-at="2023-09-13T23:03:44 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="lanchApplication()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:44 IST" name="lanchApplication" finished-at="2023-09-13T23:03:47 IST" duration-ms="2679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lanchApplication -->
+        <test-method signature="orderHistoryTest()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:47 IST" name="orderHistoryTest" finished-at="2023-09-13T23:03:47 IST" depends-on-methods="SeleniumFrameworkDesign.StandAloneTest.submitOrder" duration-ms="539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.StandAloneTest@6f53b8a]" started-at="2023-09-13T23:03:47 IST" name="tearDown" finished-at="2023-09-13T23:03:47 IST" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumFrameworkDesign.StandAloneTest -->
+    </test> <!-- Login Error Test -->
+  </suite> <!-- Suite -->
+</testng-results>

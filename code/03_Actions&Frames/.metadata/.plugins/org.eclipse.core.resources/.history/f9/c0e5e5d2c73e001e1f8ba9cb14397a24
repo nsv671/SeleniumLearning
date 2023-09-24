@@ -1,0 +1,19 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FrameDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String URL = "https://jqueryui.com/draggable/";
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get(URL);
+		driver.switchTo().frame((WebElement) By.cssSelector("iframe[class='demo-frame']"));
+		driver.findElement(By.id("draggable")).click();
+
+	}
+
+}

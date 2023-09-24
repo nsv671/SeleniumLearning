@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeOptions"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.emulation.Emulation"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.model.AuthChallengeResponse.Response"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.model.Response"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.model.Request"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.fetch.Fetch"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.fetch.model.RequestPattern"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.model.ErrorReason"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.DevTools"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.Network"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.ImmutableList"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v114.network.Network"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v116.network.model.ConnectionType"/>
+    <fullyQualifiedTypeName name="java.util.function.Predicate"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.UsernameAndPassword"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.HasAuthentication"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.logging.Logs"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.logging.LogEntries"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.logging.LogType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.logging.LogEntry"/>
+</qualifiedTypeNameHistroy>

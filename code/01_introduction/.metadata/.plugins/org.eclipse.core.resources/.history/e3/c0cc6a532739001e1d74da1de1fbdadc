@@ -1,0 +1,16 @@
+package introduction;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+
+public class AutomationAssignment2 {
+	public static void main(String[] age) {
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		
+		driver.findElement(By.name("name")).sendKeys("nsv");
+		driver.findElement(By.name("email")).sendKeys("automation@test.com");
+	}
+}

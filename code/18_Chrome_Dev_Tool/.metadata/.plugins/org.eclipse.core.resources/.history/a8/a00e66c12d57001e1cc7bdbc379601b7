@@ -1,0 +1,38 @@
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+
+public class setGeoLocation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		DevTools devTools = driver.getDevTools();
+		devTools.createSession();
+		
+		Map<String, Object> geoLocation = new HashMap<String, Object>();
+		geoLocation.put("latitude", 43);
+		geoLocation.put("longitude", 7);
+		geoLocation.put("accuracy", 10);
+		
+		driver.executeCdpCommand("Emulation.setGeolocationOverride", geoLocation);
+		
+		driver.get("https://google.com");
+		
+		driver.findElement(By.name("q")).sendKeys("netflix", Keys.ENTER);
+		driver.findElements(By.className(".s6JM6d")).get(0).click();
+		String heroTextTitle = driver.findElement(By.tagName("h1")).getText();
+		System.out.println(driver.getTitle());
+		System.out.println(heroTextTitle);
+
+	}
+
+}

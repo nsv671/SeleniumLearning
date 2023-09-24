@@ -1,0 +1,55 @@
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.HashMap;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.io.Files;
+
+public class FileUpload {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		String projectPath = System.getProperty("user.dir");
+		
+		HashMap<String, Object> chromePreference = new HashMap<String, Object>();
+		chromePreference.put("","");
+		chromePreference.put("","");
+		
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("perfs", chromePreference);
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
+		
+		driver.get("https://www.ilovepdf.com/pdf_to_jpg");
+		driver.findElement(By.id("pickfiles")).click();
+		
+		Thread.sleep(3000);
+		
+		Runtime.getRuntime().exec(projectPath+"\\fileUploadScript\\FileUpload.exe");
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("processTask")));
+		driver.findElement(By.id("processTask")).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("pickfiles")));
+		driver.findElement(By.id("pickfiles")).click();
+		
+		Runtime.getRuntime().exec(projectPath+"\\fileDownloadScript\\FileUpload.exe");
+		
+		File file = new File(System.getProperty("user.dir")+"\\downloads\\ilovepdf_pages-to-jpg.zip");
+		
+		if(file.exists())
+			System.out.println("File downloaded successfully");
+		Thread.sleep(2000);
+		driver.close();
+	}
+
+}

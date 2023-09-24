@@ -1,0 +1,28 @@
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+
+public class setGeoLocation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Program Files\\Google\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		DevTools devTools = driver.getDevTools();
+		devTools.createSession();
+		
+		Map geoLocation = new HashMap();
+		geoLocation.put("latitude", 43);
+		geoLocation.put("longitude", 7);
+		geoLocation.put("accuracy", 10);
+		
+		driver.executeCdpCommand("Emulation.setGeolocationOverride", geoLocation)
+
+	}
+
+}

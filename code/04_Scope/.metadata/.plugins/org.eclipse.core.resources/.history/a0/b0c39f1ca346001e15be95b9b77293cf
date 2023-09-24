@@ -1,0 +1,14 @@
+package TestNGPackage;
+import org.testng.annotations.Test;
+
+public class TestNGDemo {
+	@Test
+	public void testNGDemoMethod() {
+		System.out.println("Run via TestNG Library");
+	}
+	
+	@Test
+	public void testNGDemoMethod2() {
+		System.out.println("Run via TestNG Library Method 2");
+	}
+}

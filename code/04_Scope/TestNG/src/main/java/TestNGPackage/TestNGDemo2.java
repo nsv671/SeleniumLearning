@@ -1,0 +1,15 @@
+package TestNGPackage;
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.Parameters;
+
+public class TestNGDemo2 {
+
+	@Parameters("URL")
+	@Test(groups= {"smoke"})
+	public void testNGDemoMethodSecondClass(String urlName) {
+		System.out.println("TestNg 2nd class method output");
+		System.out.println("*******************"+urlName+"*******************");
+		Assert.assertTrue(false);
+	}
+}

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-31T01:04:49 IST" name="Suite" finished-at="2023-08-31T01:04:49 IST" duration-ms="77">
+    <groups>
+      <group name="smoke">
+        <method signature="TestNGDemo2.testNGDemoMethodSecondClass(java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo2@c730b35]" name="testNGDemoMethodSecondClass" class="TestNGPackage.TestNGDemo2"/>
+        <method signature="TestNGDemo3.mobileSigninCarLoan()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" name="mobileSigninCarLoan" class="TestNGPackage.TestNGDemo3"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2023-08-31T01:04:49 IST" name="Car Loan" finished-at="2023-08-31T01:04:49 IST" duration-ms="77">
+      <class name="TestNGPackage.TestNGDemo4">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:TestNGPackage.TestNGDemo4@206a70ef]" started-at="2023-08-31T01:04:49 IST" name="beforeSuite" finished-at="2023-08-31T01:04:49 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+      </class> <!-- TestNGPackage.TestNGDemo4 -->
+      <class name="TestNGPackage.TestNGDemo3">
+        <test-method is-config="true" signature="firstExecution()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="firstExecution" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstExecution -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="beforeClass" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="mobileLoginCarLoan(java.lang.String,java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="mobileLoginCarLoan" finished-at="2023-08-31T01:04:49 IST" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[carLoan.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[APIKey/PASSWORD]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileLoginCarLoan -->
+        <test-method signature="mobileSigninCarLoan()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="mobileSigninCarLoan" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileSigninCarLoan -->
+        <test-method signature="webLoginCarLoan(java.lang.String,java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="webLoginCarLoan" data-provider="getData" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Set1DataUserName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Set1DataPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webLoginCarLoan -->
+        <test-method signature="webLoginCarLoan(java.lang.String,java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="webLoginCarLoan" data-provider="getData" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Set2DataUserName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Set2DataPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webLoginCarLoan -->
+        <test-method signature="webLoginCarLoan(java.lang.String,java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="webLoginCarLoan" data-provider="getData" finished-at="2023-08-31T01:04:49 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Set3DataUserName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Set3DataPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webLoginCarLoan -->
+        <test-method signature="mobileSignOffCarLoan()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="mobileSignOffCarLoan" finished-at="2023-08-31T01:04:49 IST" depends-on-methods="TestNGPackage.TestNGDemo3.webLoginCarLoan, TestNGPackage.TestNGDemo3.mobileLoginCarLoan" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileSignOffCarLoan -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:TestNGPackage.TestNGDemo3@b2c9a9c]" started-at="2023-08-31T01:04:49 IST" name="afterClass" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- TestNGPackage.TestNGDemo3 -->
+      <class name="TestNGPackage.TestNGDemo">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="afterSuite" finished-at="2023-08-31T01:04:49 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- TestNGPackage.TestNGDemo -->
+    </test> <!-- Car Loan -->
+    <test started-at="2023-08-31T01:04:49 IST" name="Test" finished-at="2023-08-31T01:04:49 IST" duration-ms="61">
+      <class name="TestNGPackage.TestNGDemo2">
+        <test-method signature="testNGDemoMethodSecondClass(java.lang.String)[pri:0, instance:TestNGPackage.TestNGDemo2@c730b35]" started-at="2023-08-31T01:04:49 IST" name="testNGDemoMethodSecondClass" finished-at="2023-08-31T01:04:49 IST" duration-ms="25" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test.com]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at TestNGPackage.TestNGDemo2.testNGDemoMethodSecondClass(TestNGDemo2.java:13)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNGDemoMethodSecondClass -->
+      </class> <!-- TestNGPackage.TestNGDemo2 -->
+      <class name="TestNGPackage.TestNGDemo4">
+        <test-method signature="webLoginHomeLoan()[pri:0, instance:TestNGPackage.TestNGDemo4@206a70ef]" started-at="2023-08-31T01:04:49 IST" name="webLoginHomeLoan" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webLoginHomeLoan -->
+      </class> <!-- TestNGPackage.TestNGDemo4 -->
+      <class name="TestNGPackage.TestNGDemo">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="beforeMethod" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNGDemoMethod()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="testNGDemoMethod" finished-at="2023-08-31T01:04:49 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNGDemoMethod -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="afterMethod" finished-at="2023-08-31T01:04:49 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="beforeMethod" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNGDemoMethod2()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="testNGDemoMethod2" finished-at="2023-08-31T01:04:49 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNGDemoMethod2 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="afterMethod" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="lastExecution()[pri:0, instance:TestNGPackage.TestNGDemo@5b7a5baa]" started-at="2023-08-31T01:04:49 IST" name="lastExecution" finished-at="2023-08-31T01:04:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lastExecution -->
+      </class> <!-- TestNGPackage.TestNGDemo -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

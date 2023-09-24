@@ -1,0 +1,24 @@
+package SeleniumFrameworkDesign.StepDefiition;
+
+import java.io.IOException;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import io.cucumber.java.en.Given;
+
+public class StepDefinitionImplementation extends BaseTest{
+
+	@Given("i landed on the E-commerce page")
+	public void i_landed_on_the_eCommerce_page() throws IOException {
+		initilizedDriver();
+	}
+	
+	@Given("^Logged in with username (.+) and password (.+)$")
+	public void logged_in_with_username_password(String userName, String password) {
+		
+	}
+	
+//	Given Logged in with username <name> and password <password>
+//    When I want product <productName> to cart
+//    And checkout <productName> and submit the order
+//    Then "THANKYOU FOR THE ORDER." message is displayed ion confirmation page
+}

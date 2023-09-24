@@ -1,0 +1,29 @@
+import java.lang.reflect.Proxy;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class SSLCheck {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		String URL = "https://expired.badssl.com/";
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.setAcceptInsecureCerts(true);
+		
+		Proxy proxy = new Proxy();
+		proxy.
+		
+		chromeOptions.setCapability("proxy", proxy);
+		
+		WebDriver driver = new ChromeDriver(chromeOptions);
+		
+		driver.get(URL);
+		
+		Thread.sleep(3000);
+		driver.close();
+	}
+
+}

@@ -1,0 +1,14 @@
+package SeleniumFrameworkDesign.StepDefiition;
+
+import java.io.IOException;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import io.cucumber.java.en.Given;
+
+public class StepDefinitionImplementation extends BaseTest{
+
+	@Given("i landed on the E-commerce page")
+	public void i_landed_on_the_eCommerce_page() throws IOException {
+		initilizedDriver();
+	}
+}

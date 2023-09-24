@@ -1,0 +1,32 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.openqa.selenium.support.locators.RelativeLocator.*;
+
+public class Selenium4o {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String URL = "https://rahulshettyacademy.com/angularpractice";
+		WebDriver driver = new ChromeDriver();
+		driver.get(URL);
+		
+		WebElement nameInput = driver.findElement(By.cssSelector("[name='name']"));
+//		(RelativeLocator.with(By.tagName("label")).above(nameInput)).getText();
+		String label = driver.findElement(with(By.tagName("label")).above(nameInput)).getText();
+		System.out.println(label);
+		
+		JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+		javascriptExecutor.executeScript("window.scrollBy(0,500)");
+		
+		WebElement dateOfBirth = driver.findElement(By.cssSelector("label[for='dateofBirth']"));
+		driver.findElement(with(By.tagName("input")).below(dateOfBirth)).sendKeys("16/17/2023");
+		System.out.println(dateOfBirth.getText());
+//		System.out.println(driver.findElement(with(By.tagName("input")).below(dateOfBirth)).getAttribute("value"));
+		System.out.println(driver.findElement(By.cssSelector("input[name='bday']")).getText());
+		driver.close();
+	}
+
+}

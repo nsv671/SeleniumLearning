@@ -1,0 +1,5 @@
+package SeleniumFrameworkDesign.locator;
+
+public class ProductCatalog {
+
+}

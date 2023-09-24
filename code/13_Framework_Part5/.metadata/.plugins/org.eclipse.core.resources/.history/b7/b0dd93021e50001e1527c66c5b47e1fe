@@ -1,0 +1,18 @@
+import com.aventstack.extentreports.ExtentReports;
+
+public class ExtentReporterNG {
+	public static ExtentReports getReporterObject() {
+
+		// ExtentReports, ExtentSparkReporter
+		String path = System.getProperty("user.dir") + "\\reports\\index.html";
+		ExtentSparkReporter reporter = new ExtentReporter(path);
+
+		reporter.config().setDocumentTitle("Test Result");
+
+		ExtentReports extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("tester", "nitesh sah");
+		
+		return extent;
+	}
+}

@@ -1,0 +1,35 @@
+package TestNGPackage;
+
+import org.testng.annotations.Test;
+
+public class TestNGDemo3 {
+	@Test
+	public void webLoginCarLoan() {
+		//Selenium web login test case
+		System.out.println("Web Login Car Loan Test Case");
+	}
+	
+	@Test
+	public void mobileLoginCarLoan() {
+		//Appuim mobile login test case
+		System.out.println("Mobile Login Car loan Test Case");
+	}
+	
+	@Test
+	public void loginAPICarLoan() {
+		//Rest API automation
+		System.out.println("API Login Car Loan Test Case");
+	}
+	
+	@Test
+	public void mobileSigninCarLoan() {
+		//Appuim mobile login test case
+		System.out.println("Mobile SIGNIN Car loan Test Case");
+	}
+	
+	@Test
+	public void mobileSignOffCarLoan() {
+		//Appuim mobile login test case
+		System.out.println("Mobile SignOff Car loan Test Case");
+	}
+}

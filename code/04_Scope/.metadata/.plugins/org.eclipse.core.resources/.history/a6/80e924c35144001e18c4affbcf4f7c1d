@@ -1,0 +1,25 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrokenLink {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String URL = "https://rahulshettyacademy.com/AutomationPractice/";
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get(URL);
+		
+		List<WebElement> footerLinks = driver.findElements(By.cssSelector(".footer_top_agile_w3ls gffoot footer_style > a"));
+		
+		System.out.println(footerLinks);
+		System.out.println(footerLinks.size());
+		
+		driver.close();
+	}
+
+}

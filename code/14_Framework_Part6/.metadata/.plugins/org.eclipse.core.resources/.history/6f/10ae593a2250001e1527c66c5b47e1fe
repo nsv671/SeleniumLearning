@@ -1,0 +1,85 @@
+package SeleniumFrameworkDesign;
+
+import java.util.HashMap;
+import java.util.List;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import SeleniumFrameworkDesign.locator.CartPage;
+import SeleniumFrameworkDesign.locator.CheckOutPage;
+import SeleniumFrameworkDesign.locator.ConformationPage;
+import SeleniumFrameworkDesign.locator.OrdersPage;
+import SeleniumFrameworkDesign.locator.ProductCatalogue;
+
+public class StandAloneTest extends BaseTest {
+	String productName = "ADIDAS ORIGINAL";
+
+	@Test(dataProvider="getData", groups= {"Purchase"})
+	public void submitOrder(HashMap<String, String> input) throws InterruptedException, IOException {
+//		LandingPage landingPage = lanchApplication();
+		
+		ProductCatalogue productCatalogue = landingPage.loginInto(input.get("email"), input.get("password"));
+		
+//		List<WebElement> webElementListsOfProduct = productCatalogue.getProductList();
+
+		CartPage cartPage = productCatalogue.addProductToCart(input.get("productName"));
+		boolean flag = cartPage.VerifyProductDisplay(input.get("productName"));
+		Assert.assertTrue(flag);
+
+		CheckOutPage checkOutPage = cartPage.goTOheckout();
+		checkOutPage.selectCountry("India");
+		ConformationPage conformationPage= checkOutPage.submitOrder();
+		String conformationMessage = conformationPage.getConformationMessage();
+		Assert.assertTrue(conformationMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		
+		driver.findElement(By.className("fa-sign-out")).click();
+	}
+
+	@Test(dependsOnMethods= {"submitOrder"})
+	public void orderHistoryTest() {
+		ProductCatalogue productCatalogue = landingPage.loginInto("test671@test.com", "Zxcvbnm@671");
+		
+		OrdersPage ordersPage = productCatalogue.goToOrdersPage();
+		boolean flag = ordersPage.verifyOrderDisplay(productName);
+		Assert.assertTrue(flag);
+	}S
+	
+//	Extend Reports --
+	
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		
+		String filePath = System.getProperty("user.dir")+"\\src\\test\\java\\SeleniumFrameworkDesign\\Data\\PurchaseOrder.json";
+		Reporter.log(filePath, true);
+		List<HashMap<String, String>> jsonListData = getJsonDataToMap(filePath);
+		
+		return new Object[][] {{jsonListData.get(0)}, {jsonListData.get(1)}};
+		
+//		HashMap<String, String> map1 = new HashMap<String, String>();
+//		map1.put("email","test671@test.com");
+//		map1.put("password","Zxcvbnm@671");
+//		map1.put("productName","ADIDAS ORIGINAL");
+//		
+//		HashMap<String, String> map2 = new HashMap<String, String>();
+//		map2.put("email","test672@test.com");
+//		map2.put("password","Zxcvbnm@672");
+//		map2.put("productName","IPHONE 13 PRO");
+		
+//		return new Object[][] {{map1},{map2}};
+	}
+	
+//	public Object[][] getData() {
+//		return new Object[][] {{"test671@test.com", "Zxcvbnm@671", "ADIDAS ORIGINAL"},{"test672@test.com", "Zxcvbnm@672", "IPHONE 13 PRO"}};
+//	}
+	
+}

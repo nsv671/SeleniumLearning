@@ -1,0 +1,19 @@
+package SeleniumFrameworkDesign;
+
+import java.io.IOException;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import SeleniumFrameworkDesign.TestComponents.BaseTest;
+import SeleniumFrameworkDesign.locator.LandingPage;
+
+public class ErrorValidation extends BaseTest {
+
+	@Test
+	public void submitOrder() throws InterruptedException, IOException {
+		landingPage.loginInto("testreg671@test.com", "Zxcvbnrgefm@671");
+		String errorMessage = landingPage.getErrorMessage();
+		Assert.assertEquals(errorMessage, "Incorrect email or password.");
+	}
+
+}

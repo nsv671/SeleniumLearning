@@ -1,0 +1,37 @@
+import java.util.Set;
+import java.util.Iterator;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultipleWindow {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String mainURL = "https://rahulshettyacademy.com/angularpractice/";
+		String secondaryURL = "https://rahulshettyacademy.com/";
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get(mainURL);
+		
+		driver.switchTo().newWindow(WindowType.TAB);
+		Set<String> window = driver.getWindowHandles();
+		Iterator<String> iterator = window.iterator();
+		String parent = iterator.next();
+		String chield = iterator.next();
+		
+		driver.switchTo().window(chield);
+		driver.get(secondaryURL);
+		
+		WebElement course = driver.findElement(By.cssSelector(".courses-block[1] .inner-box .lower-content .upper-box h2"));
+		String courseName =course.getText();
+		
+		driver.switchTo().window(parent);
+		
+		driver.findElement(By.cssSelector("input[name='name']")).sendKeys(courseName);
+	}
+
+}

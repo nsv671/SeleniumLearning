@@ -1,0 +1,29 @@
+package introduction;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+
+public class AutomationAssignment2 {
+	public static void main(String[] age) throws InterruptedException  {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		
+		driver.findElement(By.name("name")).sendKeys("nsv");
+		driver.findElement(By.name("email")).sendKeys("automation@test.com");
+		driver.findElement(By.id("exampleInputPassword1")).sendKeys("automation@test");
+		driver.findElement(By.cssSelector("input[type='checkbox']")).click();
+		
+		driver.findElement(By.id("exampleFormControlSelect1")).click();
+		driver.findElement(By.xpath("//*[@id=\"exampleFormControlSelect1\"]/option[2]")).click();
+		
+		driver.findElement(By.id("inlineRadio1")).click();
+		
+		driver.findElement(By.cssSelector("input[type='date']")).sendKeys("12-34-2056");
+		
+		Thread.sleep(4000);
+		driver.close();
+	}
+}

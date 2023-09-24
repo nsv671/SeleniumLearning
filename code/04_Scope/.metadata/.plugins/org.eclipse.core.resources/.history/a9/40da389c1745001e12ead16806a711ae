@@ -1,0 +1,45 @@
+import java.util.Set;
+import java.util.List;
+import java.util.Iterator;
+import java.util.stream.Collectors;
+
+import org.testng.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LiveDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String URL = "https://rahulshettyacademy.com/seleniumPractise/";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get(URL);
+		
+		driver.findElement(By.cssSelector(".cart-header-navlink[href='#/offers']")).click();
+		
+		Set<String> window = driver.getWindowHandles();
+		
+		Iterator<String> iterator = window.iterator();
+		//parent window
+		iterator.next();
+		
+		driver.switchTo().window(iterator.next());
+		
+		driver.findElement(By.xpath("//table/thead/tr/th[1]")).click();
+		
+		List<WebElement> fruitAndVegitableWebElementList = driver.findElements(By.xpath("//table/tbody/tr/td[1]"));
+		
+		List<String> vegitableAndFruitName = fruitAndVegitableWebElementList.stream().map(webelement -> webelement.getText()).collect(Collectors.toList());
+		
+		List<String> sortedVegitableAndFruitName = vegitableAndFruitName.stream().sorted().collect(Collectors.toList());
+		
+		Assert.assertTrue(vegitableAndFruitName.equals(sortedVegitableAndFruitName));
+		
+		driver.quit();
+	}
+
+}
